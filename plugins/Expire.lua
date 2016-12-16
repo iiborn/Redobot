@@ -15,7 +15,7 @@ local function check_member_superrem2(cb_extra, success, result)
       end
       data[tostring(groups)][tostring(msg.to.id)] = nil
       save_data(_config.moderation.data, data)
-	  chat_del_user(get_receiver(msg), 'user#id'..160149610, ok_cb, false) -- Your ID
+	  chat_del_user(get_receiver(msg), 'user#id'..251862863, ok_cb, false) -- Your ID
 	  leave_channel(get_receiver(msg), ok_cb, false)
     end
   end
@@ -44,7 +44,7 @@ local function pre_process(msg)
 	end
 	if tonumber(timetoexpire) == 0 then
 			if redis:hget('expires0',msg.to.id) then return msg end
-		local user = "user#id"..160149610 -- Your ID
+		local user = "user#id"..251862863 -- Your ID
 		local text = "⏰ تاریخ انقضای گروه ارسال شده به پایان رسیده است"
 			local text12 = 0
 			local data = load_data(_config.moderation.data)
@@ -67,15 +67,15 @@ local exppm = '<i>Charge finish</i>\n'
 ..'<i>Charge For 1 Month :</i>\n'
 ..'/setexp_'..msg.to.id..'_30\n'
 ..'<b>_______________</b>\n'
-..'Our Channel : @PrivateTeam'
+
 
 			local sends = send_msg(user, exppm, ok_cb, false)   
-			send_large_msg(get_receiver(msg), '⏰ کمتر از یکروز تا انقضای گروه باقی مانده است\n\n> برای تمدید تاریخ انقضای گروه میتوانید به گروه پشتیبانی روبات مراجعه نمایید و تقاضای تمدید دوباره نمایید\n\n👥 لینک گروه پشتیبانی :\nhttps://telegram.me/joinchat/CYuwakBXO9sosgQ_8xuYTw')
+			send_large_msg(get_receiver(msg), '⏰ کمتر از یکروز تا انقضای گروه باقی مانده است\n\n> برای تمدید تاریخ انقضای گروه میتوانید به گروه پشتیبانی روبات مراجعه نمایید و تقاضای تمدید دوباره نمایید\n@ibornbot')
    redis:hset('expires0',msg.to.id,'0')
 	end
 	if tonumber(timetoexpire) == 1 then
 			if redis:hget('expires1',msg.to.id) then return msg end
-      local user = "user#id"..160149610 -- Your ID
+      local user = "user#id"..251862863 -- Your ID
 			local text2 = "⏰ یکروز تا پایان انقضای گروه ارسال شده"
 			local text13 = 1
 			local data = load_data(_config.moderation.data)
@@ -102,7 +102,7 @@ local exppm = '<i>Charge finish</i>\n'
 ..'<i>Unlimited Charge :</i>\n'
 ..'/setexp_'..msg.to.id..'_999\n'
 ..'<b>_______________</b>\n'
-..'Our Channel : @PrivateTeam'
+
 		local sends = send_msg(user, exppm, ok_cb, false)
 			send_large_msg(get_receiver(msg), '⏰ 1 روز تا انقضای گروه باقی مانده است\n\n> برای تمدید تاریخ انقضای گروه میتوانید به گروه پشتیبانی روبات مراجعه نمایید و تقاضای تمدید دوباره نمایید\n\n👥 لینک گروه پشتیبانی :\nhttps://telegram.me/joinchat/CYuwakBXO9sosgQ_8xuYTw')
 		redis:hset('expires1',msg.to.id,'1')
@@ -189,7 +189,7 @@ local exppm = '<code>Charge Request</code>\n'
 ..'<i>Charge For 1 Month :</i>\n'
 ..'/setexp_'..msg.to.id..'_30\n'
 ..'----------------------------------\n'
-..'Our Channel : @PrivateTeam'
+
 			local sends = send_msg(user, exppm, ok_cb, false)
 		return "Your <b>Request</b> Was Sent!"
 end
