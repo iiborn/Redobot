@@ -100,19 +100,19 @@ elif [ "$1" = "update" ]; then
   update
 else
   if [ ! -f ./tg/telegram.h ]; then
-    echo "Tg not installed - By @MobinDev"
+    echo "Tg not installed - By @iborn"
     echo "Run $0 install"
     exit 1
   fi
 
   if [ ! -f ./tg/bin/telegram-cli ]; then
-    echo "Tg not installed - By @MobinDev"
+    echo "Tg not installed - By @iborn"
     echo "Run $0 install"
     exit 1
   fi
   while true; do
    rm -r ../.telegram-cli/state
-   ./tg/bin/telegram-cli -k ./tg/tg-server.pub -s ./bot/imanager.lua -l 1 -E $@
+   ./tg/bin/telegram-cli -k ./tg/tg-server.pub -s ./bot/redobot.lua -l 1 -E $@
    sleep 3
   done
 fi
