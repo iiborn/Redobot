@@ -330,6 +330,3 @@ return {
   run = run,
   pre_process = pre_process
 }
---By @MobinDev :)
---https://github.com/SEEDTEAM/TeleSeed/blob/test/plugins/admin.lua
----Modified by @Rondoozle and @MobinDev
