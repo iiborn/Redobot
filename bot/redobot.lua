@@ -245,35 +245,33 @@ function create_config( )
     "lock_Edit",
     "lock_Cmds"
     },
-    sudo_users = {160149610,123456789}, -- Sudo User
+    sudo_users = {251862863}, -- Sudo User
     moderation = {data = 'data/moderation.json'}, -- Bot BackUp file
-    about_text = [[iManager - Cli
+    about_text = [[Redobot - Cli
 		
 A new <b>AntiSpam-Bot</b> Based on <code>TeleSeed</code>
-github.com/MobinDehghani/iManager
+github.com/iiborn
 		
-@MobinDev <i>[Developer]</i>
-@MrKrn <i>[Seller]</i>
-@PrivateTeam <i>[Channel]</i>
-@leedBot <i>[API-Bot]</i>
+@iborn <i>[Developer]</i>
+@extreme_ch <i>[Channel]</i>
+@extremerobot <i>[API-Bot]</i>
 
 Special thanks to :
-@Namusn - Parsaw
-@Sudo1 - Amir
-@inviter - Samin
-@Alirezamee - AliReza
+@Unfriendli - Mahdi
+@MR_PU - Hojt
+
 
 Bot Support :
-https://telegram.me/joinchat/CYuwakBXO9sosgQ_8xuYTw
+https://telegram.me/joinchat/DysbFEEBQq4cKExxrxbMJg
 ]],
     help_text_realm = [[ ]],      -- Help Text (Relam)
     help_text = [[ ]],            -- Help Text (NormalGroup)
 	help_text_super =[[
 ▫️For <b>Members</b> :
-telegram.me/PrivateTeam/65
+telegram.me/Extreme_TM/2
 
 ▫️For <b>Modrators</b> :
-telegram.me/PrivateTeam/66
+telegram.me/Extreme_TM/3
 ]],   -- Help Text (SuperGroup)
   }
   serialize_to_file(config, './data/config.lua')
