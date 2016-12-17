@@ -208,7 +208,7 @@ if to == 'user' or service or is_admin1(msg) and to == "chat" or to == "channel"
 
 	if matches[1] == 'help' and msg.to.type == 'user' or matches[1] == 'pmhelp' and is_admin1(msg) and msg.to.type ~= 'user' then
       	savelog(msg.to.id, name_log.." ["..msg.from.id.."] used pm help")
-		text = "Welcome to <b>iManager</b> !\n\nTo get a list of iManager groups use /chats or /chatlist for a document list of chats.\n\nTo get a new iManager group\n\n\nOur <b>Support</b> :\nhttps://telegram.me/joinchat/CYuwakBXO9sosgQ_8xuYTw"
+		text = "Welcome to <b>RedoBot</b> !\n\nTo get a list of RedoBot groups use /chats or /chatlist for a document list of chats.\n\nTo get a new iManager group\n\n\nOur <b>Support</b> :\nhttps://telegram.me/joinchat/CYuwakBXO9sosgQ_8xuYTw"
      	return text
     end
 
