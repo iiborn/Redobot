@@ -1274,20 +1274,28 @@ function get_receiver_api(msg)
     return '-100'..msg.to.id 
   end 
 end 
-function send_api_msg(msg, receiver, text, disable_web_page_preview, markdown) 
-  local api_key = '301961008:AAGEzmoscHrk4at1Mrvn85rbbeGfcAnuZHo' --put your api token here
-  local url_api = 'https://api.telegram.org/bot'..api_key 
-      ..'/sendMessage?chat_id='..receiver..'&text='..URL.escape(text) 
-  if disable_web_page_preview == true then 
-    url_api = url_api..'&disable_web_page_preview=true' 
-  end 
-  if markdown == 'md' then 
-    url_api = url_api..'&parse_mode=Markdown' 
-  elseif markdown == 'html' then 
-    url_api = url_api..'&parse_mode=HTML' 
-  end 
-  local dat, res = https.request(url_api) 
-  if res == 400 then 
-    reply_msg(msg.id, 'Error 400.\nWhat ever that means...', ok_cb, true) 
-  end 
-end 
+function send_api_msg(msg, receiver, text, disable_web_page_preview, markdown,inline_text,inline_url)
+  
+  
+  local api_key = '285106295:AAHZasHezi01be98DZuWv5-wdhLC42bORVE'--توکن ربات هلپرتون رو اینجا قرار بدید
+  
+  
+  local url_api = 'https://api.telegram.org/bot'..api_key
+      ..'/sendMessage?chat_id='..receiver..'&text='..URL.escape(text)
+  if disable_web_page_preview == true then
+    url_api = url_api..'&disable_web_page_preview=true'
+  end
+  if markdown == 'md' then
+    url_api = url_api..'&parse_mode=Markdown'
+  elseif markdown == 'html' then
+    url_api = url_api..'&parse_mode=HTML'
+  end
+if inline_text and inline_url then
+url_api = url_api..'&reply_markup={"inline_keyboard":[[{"text":"'..inline_text..'","url":"'..inline_url..'"}]]}'
+end
+  local dat, res = https.request(url_api)
+  local test = print(url_api)
+  if res == 400 then
+    reply_msg(msg.id, 'Error 400.\nWhat ever that means...', ok_cb, true)
+  end
+end
