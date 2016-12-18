@@ -3,7 +3,7 @@ local receiver = cb_extra.receiver
  local msg = cb_extra.msg
   local deleted = 0 
 if success == 0 then
-send_large_msg(receiver, "First set me as <b>Admin</b>!") 
+send_api_msg(receiver, "First set me as <b>Admin</b>!") 
 end
 for k,v in pairs(result) do
   if not v.first_name and not v.last_name then
@@ -11,7 +11,7 @@ deleted = deleted + 1
  kick_user(v.peer_id,msg.to.id)
  end
  end
- send_large_msg(receiver, deleted.." <b>Deleted Account</b> Removed from Group!") 
+ send_api_msg(msg, get_receiver_api, deleted.." <b>Deleted Account</b> Removed from Group!", true, 'md') 
  end 
 local function run(msg, matches)
 if is_owner(msg) then
