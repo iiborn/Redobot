@@ -1502,9 +1502,9 @@ function show_supergroup_settingsmod(msg, target)
   local hash = 'group:'..msg.to.id
   local group_lang = redis:hget(hash,'lang')
   if group_lang then
- return reply_msg(msg.id,"✔️نام سوپرگروه:\n》"..msg.to.title.."\n✔️یدی سوپرگروه:\n》"..msg.to.id.."\n✔️ایدی شما:\n》"..msg.from.id.."\n✔️یوزرنیم:\n》@"..(msg.from.username or '').."\n⚙تظیمات سوپرگروه⚙:\n➖➖➖➖➖➖➖\n💎قفل لینک: [ "..settings.lock_link.." ]\n🛡قفل مخاطب ها: [ "..settings.lock_contacts.." ]\n💎 قفل فلود: [ "..settings.flood.." ]\n🛡تعداد فلود: [ "..NUM_MSG_MAX.." ]\n💎قفل اسپم: [ "..settings.lock_spam.." ]\n🛡قفل چت عربی: [ "..settings.lock_arabic.." ]\n💎قفل ممبر: [ "..settings.lock_member.." ]\n🛡قفل راست به چپ: [ "..settings.lock_rtl.." ]\n💎قفل ورودوخروج: [ "..settings.lock_tgservice.." ]\n🛡قفل استیکر: [ "..settings.lock_sticker.." ]\n💎قفل هشتگ(#): [ "..settings.tag.." ]\n🛡قفل شکلک: [ "..settings.lock_emoji.." ]\n💎قفل چت انگلیسی: [ "..settings.english.." ]\n🛡قفل دستورات: [ "..settings.cmds.." ]\n💎قفل فوروارد: [ "..settings.lock_fwd.." ]\n🛡قفل ورود بالینک: [ "..settings.join.." ]\n💎قفل یوزرنیم(@): [ "..settings.username.." ]\n🛡قفل رسانه: [ "..settings.media.." ]\n💎قفل فحش: [ "..settings.fosh.." ]\n🛡قفل خروج: [ "..settings.leave.." ]\n💎قفل ربات: [ "..bots_protection.." ]\n🛡قفل اپراتور: [ "..settings.operator.." ]\n➖➖➖➖➖➖➖\n✨درباره سوپرگروه✨:\n➖➖➖➖➖➖➖\n🌟نوع گروه:\n》[ "..gp_type.." ]\n🌟عمومی بودن:\n》[ "..settings.public.." ]\n🌟تنظیمات سختگیرانه:\n》[ "..settings.strict.." ]\n_____________________\n", ok_cb, false)
+ return reply_msg(msg.id,"✔️نام سوپرگروه:\n》"..msg.to.title.."\n✔️یدی سوپرگروه:\n》"..msg.to.id.."\n✔️ایدی شما:\n》"..msg.from.id.."\n✔️یوزرنیم:\n》@"..(msg.from.username or '').."\n⚙تظیمات سوپرگروه⚙:\n➖➖➖➖➖➖➖\n💎قفل لینک: [ "..settings.lock_link.." ]\n🛡قفل مخاطب ها: [ "..settings.lock_contacts.." ]\n💎 قفل فلود: [ "..settings.flood.." ]\n🛡تعداد فلود: [ "..NUM_MSG_MAX.." ]\n💎قفل اسپم: [ "..settings.lock_spam.." ]\n🛡قفل چت عربی: [ "..settings.lock_arabic.." ]\n💎قفل ممبر: [ "..settings.lock_member.." ]\n🛡قفل راست به چپ: [ "..settings.lock_rtl.." ]\n💎قفل ورودوخروج: [ "..settings.lock_tgservice.." ]\n🛡قفل استیکر: [ "..settings.lock_sticker.." ]\n💎قفل هشتگ(#): [ "..settings.tag.." ]\n🛡قفل شکلک: [ "..settings.lock_emoji.." ]\n💎قفل چت انگلیسی: [ "..settings.english.." ]\n🛡قفل دستورات: [ "..settings.cmds.." ]\n💎قفل فوروارد: [ "..settings.lock_fwd.." ]\n🛡قفل ورود بالینک: [ "..settings.join.." ]\n💎قفل یوزرنیم(@): [ "..settings.username.." ]\n🛡قفل رسانه: [ "..settings.media.." ]\n💎قفل فحش: [ "..settings.fosh.." ]\n🛡قفل خروج: [ "..settings.leave.." ]\n💎قفل ربات: [ "..bots_protection.." ]\n🛡قفل اپراتور: [ "..settings.operator.." ]\n➖➖➖➖➖➖➖\n✨درباره سوپرگروه✨:\n➖➖➖➖➖➖➖\n🌟نوع گروه:\n》[ "..gp_type.." ]\n🌟عمومی بودن:\n》[ "..settings.public.." ]\n🌟تنظیمات سختگیرانه:\n》[ "..settings.strict.." ]", ok_cb, false)
  else
-return "\n⚙ Group Settings :\n\n》Cmd > [ "..settings.cmds.." ] \n》links > [ "..settings.lock_link.." ]\n》Contacts > [ "..settings.lock_contacts.." ]\n》Flood > [ "..settings.flood.." ]\n》Spam > [ "..settings.lock_spam.." ]\n》Arabic > [ "..settings.lock_arabic.." ]\n》Member > [ "..settings.lock_member.." ]\n》RTL > [ "..settings.lock_rtl.." ]\n》TGService > [ "..settings.lock_tgservice.." ]\n》Sticker > [ "..settings.lock_sticker.." ]\n》Tag # > [ "..settings.tag.." ]\n》Emoji > [ "..settings.lock_emoji.." ]\n》English > [ "..settings.english.." ]\n》Fwd > [ "..settings.lock_fwd.." ]\n》Join > [ "..settings.join.." ]\n》Username > [ "..settings.username.." ]\n》Media > [ "..settings.media.." ]\n》Fosh > [ "..settings.fosh.." ]\n》leave > [ "..settings.leave.." ]\n》Bots > [ "..bots_protection.." ]\n》Operator > [ "..settings.operator.." ]\n》Public > [ "..settings.public.." ]\n》Strict > [ "..settings.strict.." ]\n_____________________\n》Bot Version : 3.9 - EN\n_____________________"
+return "\n⚙ Group Settings :\n\n》Cmd > [ "..settings.cmds.." ] \n》links > [ "..settings.lock_link.." ]\n》Contacts > [ "..settings.lock_contacts.." ]\n》Flood > [ "..settings.flood.." ]\n》Spam > [ "..settings.lock_spam.." ]\n》Arabic > [ "..settings.lock_arabic.." ]\n》Member > [ "..settings.lock_member.." ]\n》RTL > [ "..settings.lock_rtl.." ]\n》TGService > [ "..settings.lock_tgservice.." ]\n》Sticker > [ "..settings.lock_sticker.." ]\n》Tag # > [ "..settings.tag.." ]\n》Emoji > [ "..settings.lock_emoji.." ]\n》English > [ "..settings.english.." ]\n》Fwd > [ "..settings.lock_fwd.." ]\n》Join > [ "..settings.join.." ]\n》Username > [ "..settings.username.." ]\n》Media > [ "..settings.media.." ]\n》Fosh > [ "..settings.fosh.." ]\n》leave > [ "..settings.leave.." ]\n》Bots > [ "..bots_protection.." ]\n》Operator > [ "..settings.operator.." ]\n》Public > [ "..settings.public.." ]\n》Strict > [ "..settings.strict.." ]\n_____________________\n》Bot Version : 2.6 - EN\n"
 end
 end 
 
@@ -1690,7 +1690,7 @@ local kickedhash = 'kicked:'..msg.from.id..':'..msg.to.id
 			if result.from.username then
 				text = "@"..result.from.username.." <code>[ "..result.from.peer_id.." ]</code> added as Owner"
 			else
-				text = "[ "..result.from.peer_id.." ] added as <b>Owner</b>"
+				text = "<code>["..result.from.peer_id.."]</code> added as <b>Owner</b>"
 			end
 			send_large_msg(channel_id, text)
 		end
@@ -2010,7 +2010,7 @@ elseif get_cmd == "setadmin" then
 				if result.username then
 					text = member_username.." ["..v.peer_id.."] added as Owner"
 				else
-					text = "[<code>"..v.peer_id.."</code>] added as <b>Owner</b>"
+					text = "<code>["..v.peer_id.."]</code> added as <b>Owner</b>"
 				end
 			end
 		elseif memberid and vusername ~= member and vpeer_id ~= memberid then
@@ -2642,7 +2642,7 @@ end
 				data[tostring(msg.to.id)][data_cat] = nil
 				save_data(_config.moderation.data, data)
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] cleaned rules")
-				return 'Rules have been cleaned'
+				return '<b>Rules</b> have been Cleaned!'
 			end
 			if matches[2] == 'about'or matches[2] =='درباره گروه' then
 				local receiver = get_receiver(msg)
@@ -2661,7 +2661,7 @@ end
 				chat_id = msg.to.id
 				local hash =  'mute_user:'..chat_id
 					redis:del(hash)
-				return "silentlist Cleaned"
+				return "<b>Silentlist</b> Cleaned!"
 			end
 			if matches[2] == 'username' and is_admin1(msg) then
 				local function ok_username_cb (extra, success, result)
@@ -2677,7 +2677,7 @@ end
 			end
 		end 
 
-		if matches[1] == 'lock'or matches[1] =='قفل کردن' and is_momod(msg) then
+		if matches[1] == 'lock'or matches[1] =='قفل' and is_momod(msg) then
 			local target = msg.to.id
 			if matches[2] == 'links'or matches[2] =='لینک' then
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked link posting ")
@@ -2707,11 +2707,11 @@ end
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked member ")
 				return lock_group_membermod(msg, data, target)
 			end		    
-			if matches[2]:lower() == 'rtl'or matches[2] =='راست به چپ' then
+			if matches[2]:lower() == 'rtl'or matches[2] =='ار تی ال' then
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked rtl chars. in names")
 				return lock_group_rtl(msg, data, target)
 			end
-			if matches[2] == 'tgservice'or matches[2] =='ورودوخروج' then
+			if matches[2] == 'tgservice'or matches[2] =='تیجی سرویس' then
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked Tgservice Actions")
 				return lock_group_tgservice(msg, data, target)
 			end
@@ -2719,7 +2719,7 @@ end
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked sticker posting")
 				return lock_group_sticker(msg, data, target)
 			end
-			if matches[2] == 'contacts'or matches[2] =='مخاطب ها' then
+			if matches[2] == 'contacts'or matches[2] =='شماره' then
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked contact posting")
 				return lock_group_contacts(msg, data, target)
 			end
@@ -2731,11 +2731,11 @@ end
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked english")
 				return lock_group_english(msg, data, target)
 			end
-			if matches[2] == 'fwd'or matches[2] =='فوروارد' then
+			if matches[2] == 'fwd'or matches[2] =='فروارد' then
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked fwd")
 				return lock_group_fwd(msg, data, target)
 			end
-			if matches[2] == 'emoji'or matches[2] =='شکلک' then
+			if matches[2] == 'emoji'or matches[2] =='اموجی' then
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked emoji")
 				return lock_group_emoji(msg, data, target)
 			end
@@ -2759,7 +2759,7 @@ end
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked leave")
 				return lock_group_leave(msg, data, target)
 			end
-			if matches[2] == 'bots'or matches[2] =='ربات ها' then
+			if matches[2] == 'bots'or matches[2] =='ربات' then
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked bots and kicked all SuperGroup bots")
  		channel_get_bots(receiver, callback_clean_bots, {msg = msg})
 				return lock_group_bots(msg, data, target)
@@ -2813,7 +2813,7 @@ end
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked sticker posting")
 				return unlock_group_sticker(msg, data, target)
 			end
-			if matches[2] == 'contacts'or matches[2] =='مخاطب ها' then
+			if matches[2] == 'contacts'or matches[2] =='شماره' then
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked contact posting")
 				return unlock_group_contacts(msg, data, target)
 			end
@@ -2825,7 +2825,7 @@ end
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked english")
 				return unlock_group_english(msg, data, target)
 			end
-			if matches[2] == 'fwd'or matches[2] =='فوروارد' then
+			if matches[2] == 'fwd'or matches[2] =='فروارد' then
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked fwd")
 				return unlock_group_fwd(msg, data, target)
 			end
@@ -2854,7 +2854,7 @@ end
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked leave")
 				return unlock_group_leave(msg, data, target)
 			end
-			if matches[2] == 'bots'or matches[2] =='ربات ها' then
+			if matches[2] == 'bots'or matches[2] =='ربات' then
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked bots")
 				return unlock_group_bots(msg, data, target)
 			end
@@ -2906,7 +2906,7 @@ end
 				if not is_muted(chat_id, msg_type..': yes') then
 					savelog(msg.to.id, name_log.." ["..msg.from.id.."] set SuperGroup to: mute "..msg_type)
 					mute(chat_id, msg_type)
-					return msg_type.." has been muted"
+					return msg_type.." has been Muted"
 				else
 					return "SuperGroup mute "..msg_type.." is already on"
 				end
@@ -2916,7 +2916,7 @@ end
 				if not is_muted(chat_id, msg_type..': yes') then
 					savelog(msg.to.id, name_log.." ["..msg.from.id.."] set SuperGroup to: mute "..msg_type)
 					mute(chat_id, msg_type)
-					return msg_type.." has been muted"
+					return msg_type.." has been Muted"
 				else
 					return "SuperGroup mute "..msg_type.." is already on"
 				end
@@ -2951,7 +2951,7 @@ end
 					return "Mute "..msg_type.." is already on"
 				end
 			end
-			if matches[2] == 'all'or matches[2] =='همه چت ها' then
+			if matches[2] == 'all'or matches[2] =='همه' then
 			local msg_type = 'All'
 				if not is_muted(chat_id, msg_type..': yes') then
 					savelog(msg.to.id, name_log.." ["..msg.from.id.."] set SuperGroup to: mute "..msg_type)
@@ -3096,7 +3096,7 @@ end
 		end
 
 		if matches[1] == 'help' and not is_momod(msg) then
-			text = "Message /superhelp  in private for SuperGroup help"
+			text = "You can See Help text to Our <b>Channel</b> : @PrivateTeam"
 			reply_msg(msg.id, text, ok_cb, false)
 		elseif matches[1] == 'help' and is_momod(msg) then
 			local name_log = user_print_name(msg.from)
@@ -3150,7 +3150,7 @@ end
 				end
 			end
 		end
-		if matches[1] == 'msg.to.peer_id' then
+		if matches[1] == 'PrivateTeam' then
 			post_large_msg(receiver, msg.to.peer_id)
 		end
 	end
@@ -3158,7 +3158,7 @@ end
 
 local function pre_process(msg)
   if not msg.text and msg.media then
-    msg.text = '['..msg.media.type..']'
+    msg.text = 'Bot Creator is @MobinDev'
   end
   return msg
 end
@@ -3173,7 +3173,15 @@ return {
 	"^[#!/]([Oo]wner)$",
 	"^[#!/]([Mm]odlist)$",
 	"^[#!/]([Bb]ots)$",
-	"^[!#/](لیست مدیران)$",
+	"^([Aa]dd)$",
+	"^([Rr]em)$",
+	"^([Mm]ove) (.*)$",
+	"^([Gg]pinfo)$",
+	"^([Aa]dmins)$",
+	"^([Oo]wner)$",
+	"^([Mm]odlist)$",
+	"^([Bb]ots)$",
+	"^(لیست مدیران)$",
 	"^(افزودن گروه)$",
 	"^(حذف گروه)$",
 	"^(اطلاعات گپ)$",
@@ -3181,12 +3189,12 @@ return {
 	"^(ایدی صاحب)$",
 	"^(لیست مدیران)$",
 	"^(ربات ها)$",
-    "^(درباره گروه)$",
+        "^(درباره گروه)$",
 	"^[#!/]([Ww]ho)$",
 	"^[#!/]([Kk]icked)$",
-    "^[#!/]([Bb]lock) (.*)",
+        "^[#!/]([Bb]lock) (.*)",
 	"^[#!/]([Bb]lock)",
-    "^[#!/]([Kk]ick) (.*)",
+        "^[#!/]([Kk]ick) (.*)",
 	"^[#!/]([Kk]ick)",
 	"^[#!/]([Tt]osuper)$",
 	"^[#!/]([Ii][Dd])$",
@@ -3210,6 +3218,34 @@ return {
 	"^[#!/]([Ss]etabout) (.*)$",
 	"^[#!/]([Ss]etrules) (.*)$",
 	"^[#!/]([Ss]etphoto)$",
+	"^([Ww]ho)$",
+	"^([Kk]icked)$",
+        "^([Bb]lock) (.*)",
+	"^([Bb]lock)",
+        "^([Kk]ick) (.*)",
+	"^([Kk]ick)",
+	"^([Tt]osuper)$",
+	"^([Ii][Dd])$",
+	"^([Ii][Dd]) (.*)$",
+	"^([Kk]ickme)$",
+	"^([Nn]ewlink)$",
+	"^([Ss]etlink)$",
+	"^([Ll]ink)$",
+	"^([Rr]es) (.*)$",
+	"^([Ss]etadmin) (.*)$",
+	"^([Ss]etadmin)",
+	"^([Dd]emoteadmin) (.*)$",
+	"^([Dd]emoteadmin)",
+	"^([Ss]etowner) (.*)$",
+	"^([Ss]etowner)$",
+	"^([Pp]romote) (.*)$",
+	"^([Pp]romote)",
+	"^([Dd]emote) (.*)$",
+	"^([Dd]emote)",
+	"^([Ss]etname) (.*)$",
+	"^([Ss]etabout) (.*)$",
+	"^([Ss]etrules) (.*)$",
+	"^([Ss]etphoto)$",
 	"^(ادمین) (.*)$",
 	"^(ادمین)",
 	"^(تنزل ادمین) (.*)$",
@@ -3226,7 +3262,7 @@ return {
 	"^(نشاندن عکس)$",
 	"^(اعضای گروه)$",
 	"^(اخراج شد)$",
-    "^(بن) (.*)",
+        "^(بن) (.*)",
 	"^(بن)",
 	"^(اخراج) (.*)",
 	"^(اخراج)",
@@ -3236,19 +3272,26 @@ return {
 	"^(لینک جدید)$",
 	"^(نشاندن لینک)$",
 	"^(لینک)$",
-    "^(نشاندن قوانین) (.*)$",
+        "^(نشاندن قوانین) (.*)$",
 	"^(نشاندن عکس)$",
 	"^[#!/]([Ss]etusername) (.*)$",
+	"^([Ss]etusername) (.*)$",
+	"^[@#!/](PrivateTeam)$",
 	"^[!#/](نشاندن ایدی) (.*)$",
-	"^[!#/]([Dd]el)$",
+	"^[!#/]([Dd]el)$",	
+	"^([Dd]el)$",
 	"^(حذف)$",
 	"^[#!/]([Ll]ock) (.*)$",
-	"^(قفل کردن) (.*)$",
+	"^([Ll]ock) (.*)$",
+	"^(قفل) (.*)$",
 	"^(باز کردن) (.*)$",
 	"^[#!/]([Uu]nlock) (.*)$",
+	"^([Uu]nlock) (.*)$",
 	"^[#!/]([Mm]ute) ([^%s]+)$",
 	"^[#!/]([Uu]nmute) ([^%s]+)$",
-	"^(قفل کردن) ([^%s]+)$",
+	"^([Mm]ute) ([^%s]+)$",
+	"^([Uu]nmute) ([^%s]+)$",
+	"^(قفل) ([^%s]+)$",
 	"^(باز کردن) ([^%s]+)$",
 	"^[#!/]([Ss]ilent)$",
 	"^[#!/]([Ss]ilent) (.*)$",
@@ -3258,6 +3301,14 @@ return {
 	"^[!#/](عمومی) (.*)$",
 	"^[#!/]([Ss]ettings)$",
 	"^[#!/]([Rr]ules)$",
+	"^([Ss]ilent)$",
+	"^([Ss]ilent) (.*)$",
+	"^([Uu]nsilent)$",
+	"^([Uu]nsilent) (.*)$",
+	"^([Pp]ublic) (.*)$",
+	"^(عمومی) (.*)$",
+	"^([Ss]ettings)$",
+	"^([Rr]ules)$",
 	"^(صامت)$",
 	"^(صامت) (.*)$",
 	"^(مصوت)$",
@@ -3265,17 +3316,22 @@ return {
 	"^(تنظیمات)$",
 	"^(قوانین)$",
 	"^[#!/]([Ss]etflood) (%d+)$",
-    "^(تنظیم حساسیت) (%d+)$",
+	"^([Ss]etflood) (%d+)$",
+        "^(تنظیم حساسیت) (%d+)$",
 	"^[#!/]([Cc]lean) (.*)$",
+	"^([Cc]lean) (.*)$",
 	"^(حذف) (.*)$",
 	"^[#!/]([Hh]elp)$",
 	"^[#!/]([Mm]uteslist)$",
 	"^[#!/]([Ss]ilentlist)$",
+	"^([Hh]elp)$",
+	"^([Mm]uteslist)$",
+	"^([Ss]ilentlist)$",
 	"^(لیست اعضای صامت)$",
 	"^(لیست صامت شدگان)$",
-    "[#!/](mp) (.*)",
+        "[#!/](mp) (.*)",
 	"[#!/](md) (.*)",
-    "^(https://telegram.me/joinchat/%S+)$",
+        "^(https://telegram.me/joinchat/%S+)$",
 	"%[(document)%]",
 	"%[(photo)%]",
 	"%[(video)%]",
